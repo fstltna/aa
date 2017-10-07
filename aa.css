@@ -3896,6 +3896,16 @@
      font-size: 1.2em;
      color: #000
  }
+ .rightwrappedimage {
+	float: right;
+	width: 30%;
+    padding: 12px;
+ }
+ .leftwrappedimage {
+	float: left;
+	width: 30%;
+    padding: 12px;
+ }
  #download-recommended {
      float: right;
      width: 40%
