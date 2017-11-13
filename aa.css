@@ -3768,7 +3768,6 @@
  #homebg1 #biglogo {
      max-width: 600px;
      max-height: 300px;
-     background-image: url("img/logo-large.png");
      margin: 2em auto
  }
  @media (-webkit-min-device-pixel-ratio: 1.25),
@@ -3777,7 +3776,6 @@
  (min-resolution: 120 dpi),
  (min-resolution: 1.25 dppx) {
      #homebg1 #biglogo {
-         background-image: url("img/logo-large.png")
      }
  }
  #homebg1 #biglogo>span {
