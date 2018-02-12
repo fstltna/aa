@@ -4606,6 +4606,7 @@
      }
  }
  .github-bigbutton,
+ .reddit-bigbutton,
  .discord-bigbutton {
      border-radius: 4px;
      display: inline-block;
@@ -4614,6 +4615,8 @@
  }
  .github-bigbutton:hover,
  .github-bigbutton:active,
+ .reddit-bigbutton:hover,
+ .reddit-bigbutton:active,
  .discord-bigbutton:hover,
  .discord-bigbutton:active {
      text-decoration: none
@@ -4637,6 +4640,26 @@
  .github-bigbutton:hover,
  .github-bigbutton:active {
      background: #0f0e0f
+ }
+ .reddit-bigbutton {
+     background: #f25309;
+     padding-left: .3em
+ }
+ .reddit-bigbutton > span {
+     font-weight: bold;
+     font-size: 1.1em
+ }
+ .reddit-bigbutton > i {
+     font-size: 2.7em
+ }
+ #social-trail .reddit-bigbutton,
+ .reddit-bigbutton .reddit-icon {
+     color: #222;
+     vertical-align: middle
+ }
+ .reddit-bigbutton:hover,
+ .reddit-bigbutton:active {
+     background: #e24f0b
  }
  #social-trail .discord-bigbutton {
      background: #7289da;
