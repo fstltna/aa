@@ -25,6 +25,7 @@
  .twitter-icon,
  .github-icon,
  .facebook-icon,
+ .reddit-icon,
  .discord-icon,
  .wm-toolbar-icon,
  .wm-toolbar-dropdown-marker,
@@ -117,6 +118,7 @@
  .twitter-icon,
  .github-icon,
  .facebook-icon,
+ .reddit-icon,
  .discord-icon,
  .wm-toolbar-icon,
  .cb-icon {
@@ -156,6 +158,7 @@
  .twitter-icon,
  .github-icon,
  .facebook-icon,
+ .reddit-icon,
  .discord-icon,
  .wm-toolbar-icon,
  .cb-icon {
@@ -183,6 +186,7 @@
  .fa-li.twitter-icon,
  .fa-li.github-icon,
  .fa-li.facebook-icon,
+ .fa-li.reddit-icon,
  .fa-li.discord-icon,
  .fa-li.wm-toolbar-icon,
  .fa-li.cb-icon {
@@ -216,6 +220,7 @@
  .fa-pull-left.twitter-icon,
  .fa-pull-left.github-icon,
  .fa-pull-left.facebook-icon,
+ .fa-pull-left.reddit-icon,
  .fa-pull-left.discord-icon,
  .fa-pull-left.wm-toolbar-icon,
  .fa-pull-left.wm-toolbar-dropdown-marker,
@@ -310,6 +315,7 @@
  .fa-pull-right.twitter-icon,
  .fa-pull-right.github-icon,
  .fa-pull-right.facebook-icon,
+ .fa-pull-right.reddit-icon,
  .fa-pull-right.discord-icon,
  .fa-pull-right.wm-toolbar-icon,
  .fa-pull-right.wm-toolbar-dropdown-marker,
@@ -410,6 +416,7 @@
  .pull-left.twitter-icon,
  .pull-left.github-icon,
  .pull-left.facebook-icon,
+ .pull-left.reddit-icon,
  .pull-left.discord-icon,
  .pull-left.wm-toolbar-icon,
  .pull-left.wm-toolbar-dropdown-marker,
@@ -504,6 +511,7 @@
  .pull-right.twitter-icon,
  .pull-right.github-icon,
  .pull-right.facebook-icon,
+ .pull-right.reddit-icon,
  .pull-right.discord-icon,
  .pull-right.wm-toolbar-icon,
  .pull-right.wm-toolbar-dropdown-marker,
@@ -1971,7 +1979,8 @@
  .fa-google:before {
      content: ""
  }
- .fa-reddit:before {
+ .fa-reddit:before,
+ .reddit-icon:before {
      content: ""
  }
  .fa-reddit-square:before {
@@ -3768,7 +3777,6 @@
  #homebg1 #biglogo {
      max-width: 600px;
      max-height: 300px;
-     background-image: url("img/logo-large.png");
      margin: 2em auto
  }
  @media (-webkit-min-device-pixel-ratio: 1.25),
@@ -3777,7 +3785,6 @@
  (min-resolution: 120 dpi),
  (min-resolution: 1.25 dppx) {
      #homebg1 #biglogo {
-         background-image: url("img/logo-large.png")
      }
  }
  #homebg1 #biglogo>span {
@@ -4563,6 +4570,9 @@
  #sociallinks .github-button:hover {
      color: #222
  }
+ #sociallinks .reddit-button:hover {
+     color: #f25309
+ }
  #sociallinks .discord-button {
      background-image: url("data:image/svg+xml,%3Csvg%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20245%20240%22%3E%3Cstyle%3E.st0%7Bfill%3A%23EEEEEE%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M104.4%20103.9c-5.7%200-10.2%205-10.2%2011.1s4.6%2011.1%2010.2%2011.1c5.7%200%2010.2-5%2010.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9%20103.9c-5.7%200-10.2%205-10.2%2011.1s4.6%2011.1%2010.2%2011.1c5.7%200%2010.2-5%2010.2-11.1s-4.5-11.1-10.2-11.1z%22%2F%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M189.5%2020h-134C44.2%2020%2035%2029.2%2035%2040.6v135.2c0%2011.4%209.2%2020.6%2020.5%2020.6h113.4l-5.3-18.5%2012.8%2011.9%2012.1%2011.2%2021.5%2019V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6%20130.6s-3.6-4.3-6.6-8.1c13.1-3.7%2018.1-11.9%2018.1-11.9-4.1%202.7-8%204.6-11.5%205.9-5%202.1-9.8%203.5-14.5%204.3-9.6%201.8-18.4%201.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8%208%2017.5%2011.8c-3%203.8-6.7%208.3-6.7%208.3-22.1-.7-30.5-15.2-30.5-15.2%200-32.2%2014.4-58.3%2014.4-58.3%2014.4-10.8%2028.1-10.5%2028.1-10.5l1%201.2c-18%205.2-26.3%2013.1-26.3%2013.1s2.2-1.2%205.9-2.9c10.7-4.7%2019.2-6%2022.7-6.3.6-.1%201.1-.2%201.7-.2%206.1-.8%2013-1%2020.2-.2%209.5%201.1%2019.7%203.9%2030.1%209.6%200%200-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3%2028.1%2010.5c0%200%2014.4%2026.1%2014.4%2058.3%200%200-8.5%2014.5-30.6%2015.2z%22%2F%3E%3C%2Fsvg%3E")
  }
@@ -4596,6 +4606,7 @@
      }
  }
  .github-bigbutton,
+ .reddit-bigbutton,
  .discord-bigbutton {
      border-radius: 4px;
      display: inline-block;
@@ -4604,6 +4615,8 @@
  }
  .github-bigbutton:hover,
  .github-bigbutton:active,
+ .reddit-bigbutton:hover,
+ .reddit-bigbutton:active,
  .discord-bigbutton:hover,
  .discord-bigbutton:active {
      text-decoration: none
@@ -4627,6 +4640,26 @@
  .github-bigbutton:hover,
  .github-bigbutton:active {
      background: #0f0e0f
+ }
+ .reddit-bigbutton {
+     background: #f25309;
+     padding-left: .3em
+ }
+ .reddit-bigbutton > span {
+     font-weight: bold;
+     font-size: 1.1em
+ }
+ .reddit-bigbutton > i {
+     font-size: 2.7em
+ }
+ #social-trail .reddit-bigbutton,
+ .reddit-bigbutton .reddit-icon {
+     color: #222;
+     vertical-align: middle
+ }
+ .reddit-bigbutton:hover,
+ .reddit-bigbutton:active {
+     background: #e24f0b
  }
  #social-trail .discord-bigbutton {
      background: #7289da;
@@ -5517,6 +5550,7 @@
  .wikilangbox .twitter-icon,
  .wikilangbox .github-icon,
  .wikilangbox .facebook-icon,
+ .wikilangbox .reddit-icon,
  .wikilangbox .discord-icon,
  .wikilangbox .wm-toolbar-icon,
  .wikilangbox .wm-toolbar-dropdown-marker,

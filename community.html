@@ -28,6 +28,103 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+
+	<script type="text/javascript">
+		(function() {
+
+			/**  @param {string[]} player_names_list - A list with
+			 * names of Argentum Age players, e.g. `['Alice', 'Bob'...]`.
+			 *   @return {string} - A pretty string representation of
+			 * `player_names_list`, e.g. `Alice and Bob are connected...`.
+			 */
+			function as_pretty_string(player_names_list) {
+
+				var first, i, last, player_names_list_len,
+						returning;
+//				debugger
+
+				if ('object' !== typeof player_names_list ||
+						!(player_names_list instanceof Array)) {
+					throw new TypeError('unexpected input data type');
+				}
+
+				player_names_list_len = player_names_list.length;
+
+				if (0 === player_names_list_len) {
+
+					return 'Nobody is connected to the Argent Lark now.';
+				}
+
+				if (1 === player_names_list_len) {
+
+					return player_names_list[0] + ' is connected to the Argent Lark now.';
+				}
+
+				first = true;
+				returning = '';
+				for (i = 0; i < player_names_list_len; i++) {
+					if (first) {
+						first = false;
+					} else {
+						last = i + 1 === player_names_list_len;
+						if (last) {
+							returning += ' and ';
+						} else {
+							returning += ', ';
+						}
+					}
+					returning += player_names_list[i];
+				}
+				returning += ' are connected to the Argent Lark now.';
+				return returning;
+			}
+
+			var PROTO = 'http';
+
+			var DOMAIN =
+				'theargentlark.com';
+//				'localhost';
+
+			var PORT = 23456;
+
+			var argent_lark_req = $.ajax({
+				url: PROTO + '://' + DOMAIN + ':' +
+						PORT.toString() +
+						'/tbs_monitor',
+				method: 'GET',
+			});
+
+			argent_lark_req.done(function (json_response) {
+
+				var logged_in_user_set, player_names,
+						player_names_list,
+						player_names_as_pretty_string,
+						span_text;
+//				debugger
+//				console.log(json_response);
+
+				if (undefined !== json_response.logged_in_user_set) {
+					logged_in_user_set = json_response.logged_in_user_set;
+					if ('object' === typeof logged_in_user_set) {
+						player_names_list = Object.keys(logged_in_user_set);
+						player_names_as_pretty_string =
+								as_pretty_string(player_names_list);
+						span_text = player_names_as_pretty_string;
+						$('#connected_players').text(span_text);
+					}
+				}
+			});
+
+			argent_lark_req.fail(function (jqXHR, textStatus) {
+
+				var debug;
+				debug = false;
+				if (debug) {
+					$('#connected_players').text('failing!' + textStatus);
+				}
+			});
+		})();
+	</script>
 </head>
 
 <body>
@@ -52,6 +149,7 @@
 					<li><a class="twitter-button" href="https://twitter.com/Argentum_Age" title="Follow @Argentum_Age on Twitter"><i class="twitter-icon" aria-hidden="true"></i><span class="sr-label">Follow @Argentum_Age on Twitter</span></a></li>
 					<li><a class="discord-button" href="https://discord.gg/0s6mSoZ1vJPlvcIw" title="Argentum Age Discord Server"><i class="discord-icon" aria-hidden="true"></i><span class="sr-label">Discord Server</span></a></li>
 					<li><a class="github-button" href="https://github.com/davewx7/citadel" title="Argentum Age on GitHub"><i class="github-icon" aria-hidden="true"></i><span class="sr-label">GitHub Project</span></a></li>
+					<li><a class="reddit-button" href="https://www.reddit.com/r/ArgentumAge/" title="Argentum Age Subreddit"><i class="reddit-icon" aria-hidden="true"></i><span class="sr-label">Argentum Age Subreddit</span></a></li>
 				</ul>
 			</div>
 
@@ -72,6 +170,11 @@
 		<p>
 		Bug reports or feature requests are also very welcome and can be filed <a href="https://github.com/davewx7/citadel/issues">using our issue tracker</a>. For more information about the game, consult the <a href="https://github.com/davewx7/citadel/wiki">developer wiki</a>. Check out the <a href="https://github.com/davewx7/citadel/wiki/A-Guide-on-How-to-Play">How to play guide</a> for some tips on playing the game.
 		</p>
+
+		<p>
+			<span id="connected_players"></span>
+		</p>
+
 		</div>
 
 	</div>
@@ -91,6 +194,10 @@
 
 			<div class="social-buttons-group">
 				<a class="github-bigbutton" href="https://github.com/davewx7/citadel" title="Check out Argentum Ages source code on GitHub!"><i class="github-icon"></i><span>GitHub</span></a>
+			</div>
+
+			<div class="social-buttons-group">
+				<a class="reddit-bigbutton" href="https://www.reddit.com/r/ArgentumAge/" title="Discuss Argentum Age on Reddit"><i class="reddit-icon"></i><span>Reddit</span></a>
 			</div>
 
 			<div class="reset"></div>
